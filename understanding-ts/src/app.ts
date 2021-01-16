@@ -1,7 +1,18 @@
-const button = document.querySelector('button')!
-
-function clickHandler(message: string) {
-  console.log('Cilicked!' + message)
+type Admin = {
+  name: string
+  privileges: string[]
 }
 
-button.addEventListener('click', clickHandler.bind(null, "You're welcome!"))
+type Employee = {
+  name: string
+  startDate: Date
+}
+
+type ElevatedEmployee = Admin & Employee
+
+const e1: ElevatedEmployee = {
+  name: 'Max',
+  privileges: ['create-server'],
+  startDate: new Date()
+}
+
